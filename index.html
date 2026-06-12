@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Happy 10th Birthday Farida 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --pink:#ff69b4;--gold:#ffd700;--purple:#a855f7;--dark:#0f0f23;
+  --glass:rgba(255,255,255,0.08)
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;-webkit-tap-highlight-color:transparent}
+body{
+  background:linear-gradient(135deg,#0f0f23 0%,#1e1b4b 50%,#312e81 100%);
+  color:white;overflow-x:hidden;min-height:100vh
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;display:flex;justify-content:center;gap:8px;
+  padding:14px 10px;background:rgba(15,15,35,0.8);backdrop-filter:blur(25px);
+  -webkit-backdrop-filter:blur(25px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.1)
+}
+
+nav button{
+  padding:10px 16px;border:none;border-radius:12px;cursor:pointer;
+  background:var(--glass);color:white;font-weight:600;font-size:0.85rem;
+  transition:all 0.3s;border:1px solid rgba(255,255,255,0.15);touch-action:manipulation;
+  display:flex;align-items:center;gap:6px
+}
+nav button.active-btn{
+  background:linear-gradient(135deg,var(--pink),var(--purple));transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(255,105,180,0.4)
+}
+
+/* SECTIONS */
+section{
+  display:none;min-height:100vh;padding:100px 20px 80px;text-align:center
+}
+section.active{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  animation:fadeIn 0.6s ease-out
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* HOME - GET STARTED PAGE */
+.home{
+  background:radial-gradient(circle at 50% 40%, rgba(255,105,180,0.3) 0%, transparent 70%);
+  position:relative
+}
+
+.float{position:absolute;font-size:3rem;opacity:0.12;animation:float 7s ease-in-out infinite;pointer-events:none}
+.f1{top:12%;left:8%}.f2{top:18%;right:8%;animation-delay:2s}
+.f3{bottom:20%;left:12%;animation-delay:1s}.f4{bottom:25%;right:12%;animation-delay:3s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(10deg)}}
+
+.hero-photo{
+  width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center;
+  border:5px solid var(--gold);box-shadow:0 0 0 10px rgba(255,215,0,0.2),0 25px 60px rgba(255,215,0,0.4);
+  margin-bottom:30px;animation:floatPhoto 5s ease-in-out infinite
+}
+@keyframes floatPhoto{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-12px) scale(1.03)}}
+
+.home h1{
+  font-family:'Great Vibes',cursive;font-size:clamp(2.8rem, 8vw, 5rem);
+  background:linear-gradient(135deg,var(--gold) 0%,var(--pink) 50%,#ff8fd4 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:15px;filter:drop-shadow(0 5px 20px rgba(255,215,0,0.5))
+}
+
+.home p{font-size:clamp(1.1rem, 2.8vw, 1.4rem);color:#e5e5e5;margin-bottom:35px;max-width:500px;font-weight:500}
+
+.get-started-btn{
+  padding:20px 55px;border:none;border-radius:50px;
+  background:linear-gradient(135deg,var(--pink),var(--purple));
+  color:white;font-size:1.2rem;font-weight:800;cursor:pointer;transition:all 0.4s;
+  box-shadow:0 18px 40px rgba(255,105,180,0.5);display:flex;align-items:center;gap:12px
+}
+.get-started-btn:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 25px 50px rgba(255,105,180,0.7)}
+.get-started-btn i{animation:beat 1.4s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+
+/* CARD */
+.card{
+  max-width:650px;width:100%;background:var(--glass);
+  padding:40px 35px;border-radius:28px;backdrop-filter:blur(25px);
+  -webkit-backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5)
+}
+
+.card h2{
+  font-family:'Great Vibes',cursive;font-size:clamp(2.2rem, 5.5vw, 3.2rem);
+  background:linear-gradient(135deg,var(--gold),var(--pink));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  margin-bottom:25px;text-align:center
+}
+
+.card p{font-size:clamp(1.05rem, 2.5vw, 1.25rem);line-height:2.1;color:#f5f5f5;text-align:center}
+
+/* GALLERY - IMAGES SHOW PROPERLY */
+.gallery{
+  display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  gap:16px;max-width:700px;width:100%;margin-top:30px
+}
+
+.gallery-box{
+  position:relative;width:100%;aspect-ratio:4/3;border-radius:18px;overflow:hidden;
+  border:3px solid rgba(255,255,255,0.15);box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transition:all 0.4s;cursor:pointer;background:#1e1b4b
+}
+.gallery-box:hover{
+  transform:scale(1.08) translateY(-8px);border-color:var(--pink);
+  box-shadow:0 20px 45px rgba(255,105,180,0.6)
+}
+.gallery-box img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;display:block
+}
+
+@media(max-width:480px){
+  .gallery{grid-template-columns:repeat(2, 1fr);gap:12px}
+  .gallery-box{aspect-ratio:1/1}
+}
+
+/* TYPING TEST */
+#typingText{
+  font-size:clamp(1.05rem, 2.6vw, 1.25rem);min-height:180px;text-align:left;
+  white-space:pre-wrap;line-height:2.2;color:#f5f5f5;max-width:600px
+}
+
+.cursor{
+  display:inline-block;width:11px;height:23px;background:var(--gold);
+  animation:blink 0.8s infinite;margin-left:4px;border-radius:2px
+}
+@keyframes blink{50%{opacity:0}}
+
+/* AUDIO CONTROL */
+.audio-control{
+  position:fixed;bottom:25px;right:25px;padding:15px 22px;
+  background:linear-gradient(135deg,var(--gold),#ffed4e);
+  border:none;border-radius:50px;color:#0f0f23;cursor:pointer;font-weight:800;font-size:0.95rem;
+  box-shadow:0 10px 30px rgba(255,215,0,0.5);z-index:100;display:flex;align-items:center;gap:10px
+}
+.audio-control.playing{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 10px 30px rgba(255,215,0,0.5)}50%{box-shadow:0 10px 40px rgba(255,215,0,0.8)}}
+
+/* CONFETTI */
+.confetti{
+  position:fixed;width:10px;height:10px;background:var(--gold);
+  animation:confettiFall 5s linear forwards;pointer-events:none;z-index:999;border-radius:2px
+}
+@keyframes confettiFall{
+ 0%{transform:translateY(-100vh) rotate(0deg);opacity:1}
+ 100%{transform:translateY(100vh) rotate(720deg);opacity:0}
+}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.96);z-index:1000;align-items:center;justify-content:center
+}
+.lightbox.active{display:flex;animation:fadeIn 0.3s}
+.lightbox img{max-width:90%;max-height:85%;border-radius:20px}
+.lightbox-close{
+  position:absolute;top:20px;right:30px;font-size:40px;color:white;cursor:pointer
+}
+</style>
+</head>
+<body>
+
+<!-- HAPPY BIRTHDAY AUDIO - PLAYS IN BACKGROUND -->
+<audio id="birthdayAudio" loop preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2025/04/24/audio_6d5f7f9c8e.mp3" type="audio/mpeg">
+  <!-- Backup audio if above doesn't work -->
+  <source src="https://www.soundjay.com/misc/sounds/birthday-song-1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <button onclick="showPage(event,'home')" class="active-btn"><i class="fas fa-home"></i> Home</button>
+  <button onclick="showPage(event,'wishes')"><i class="fas fa-gift"></i> Wishes</button>
+  <button onclick="showPage(event,'gallery')"><i class="fas fa-images"></i> Gallery</button>
+  <button onclick="showPage(event,'typing')"><i class="fas fa-keyboard"></i> Typing Test</button>
+</nav>
+
+<!-- 1. GET STARTED FRONT PAGE -->
+<section id="home" class="home active">
+  <div class="float f1">🎈</div>
+  <div class="float f2">🎂</div>
+  <div class="float f3">✨</div>
+  <div class="float f4">💖</div>
+  
+  <img src="/img.jpeg" alt="Farida" class="hero-photo" onerror="this.src='https://via.placeholder.com/220x220/ff69b4/ffffff?text=Farida'">
+  <h1>Happy Birthday Princess 🎀</h1>
+  <p>Farida Adebayo • You're 10 Years Old Today! 🎉</p>
+  <button class="get-started-btn" onclick="showPage(event,'wishes')">
+    <i class="fas fa-sparkles"></i>
+    Get Started
+  </button>
+</section>
+
+<!-- 2. BIRTHDAY WISHES PAGE -->
+<section id="wishes">
+  <div class="card">
+    <h2>🎂 Birthday Wishes for You</h2>
+    <p>
+      Happy 10th Birthday Dear Farida! 💖<br><br>
+      
+      Today you become a big 10-year-old girl! 🎉<br>
+      You are smart, kind, funny, and absolutely amazing!<br><br>
+      
+      Your smile makes everyone happy.<br>
+      Your kindness touches every heart.<br>
+      Your dreams are big and beautiful.<br><br>
+      
+      May Allah bless you with:<br>
+      📚 Wisdom and good grades<br>
+      😊 Joy and laughter every day<br>
+      🌟 Success in everything you do<br>
+      ❤️ Love from family and friends<br><br>
+      
+      Keep shining like the star you are! 🌟<br>
+      We love you so much! ❤️
+    </p>
+  </div>
+</section>
+
+<!-- 3. GALLERY PAGE WITH IMAGES -->
+<section id="gallery">
+  <div class="card">
+    <h2>🖼️ Beautiful Memories</h2>
+    <div class="gallery">
+      <div class="gallery-box">
+        <img src="/WhatsApp Image 2026-06-09 at 7.42.29 PM.jpeg" alt="Memory 1" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400'" onclick="openLightbox(this.src)">
+      </div>
+      <div class="gallery-box">
+        <img src="/fa4.jpeg" alt="Memory 2" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'" onclick="openLightbox(this.src)">
+      </div>
+      <div class="gallery-box">
+        <img src="/fa5.jpeg" alt="Memory 3" onerror="this.src='https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400'" onclick="openLightbox(this.src)">
+      </div>
+      <div class="gallery-box">
+        <img src="/image.png" alt="Memory 4" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400'" onclick="openLightbox(this.src)">
+      </div>
+      <div class="gallery-box">
+        <img src="/farr233.jpeg" alt="Memory 5" onclick="openLightbox(this.src)">
+      </div>
+      <div class="gallery-box">
+        <img src="/img.jpeg" alt="Memory 6" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. TYPING TEST PAGE -->
+<section id="typing">
+  <div class="card">
+    <h2>⌨️ Special Message</h2>
+   
+    <div id="typingText"></div><span class="cursor"></span>
+  </div>
+</section>
+
+<!-- AUDIO CONTROL BUTTON -->
+<button class="audio-control" id="audioBtn" onclick="toggleAudio()">
+  <i class="fas fa-music"></i>
+  <span>Music On</span>
+</button>
+
+<script>
+const audio = document.getElementById("birthdayAudio");
+const audioBtn = document.getElementById("audioBtn");
+let audioPlaying = false;
+let typingStarted = false;
+let confettiDone = false;
+
+// PAGE SWITCHING
+function showPage(e, page){
+  e.preventDefault();
+  
+  // Update nav
+  document.querySelectorAll("nav button").forEach(btn => btn.classList.remove("active-btn"));
+  e.currentTarget.classList.add("active-btn");
+  
+  // Show section
+  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+  document.getElementById(page).classList.add("active");
+
+  // Start typing animation
+  if(page === "typing" && !typingStarted){
+    startTyping();
+  }
+  
+  // Play audio on first interaction - browser allows it
+  if(!audioPlaying){
+    setTimeout(playAudio, 300);
+  }
+  
+  // Confetti when entering wishes
+  if(page === 'wishes' && !confettiDone){
+    createConfetti();
+    confettiDone = true;
+  }
+}
+
+// AUDIO - HAPPY BIRTHDAY SONG
+function playAudio(){
+  audio.volume = 0.6;
+  audio.play().then(() => {
+    audioPlaying = true;
+    audioBtn.classList.add('playing');
+    audioBtn.innerHTML = '<i class="fas fa-pause"></i><span>Music On</span>';
+  }).catch(() => {
+    audioBtn.innerHTML = '<i class="fas fa-play"></i><span>Tap for Music</span>';
+  });
+}
+
+function toggleAudio(){
+  if(audioPlaying){
+    audio.pause();
+    audioPlaying = false;
+    audioBtn.classList.remove('playing');
+    audioBtn.innerHTML = '<i class="fas fa-play"></i><span>Play Music</span>';
+  }else{
+    audio.play();
+    audioPlaying = true;
+    audioBtn.classList.add('playing');
+    audioBtn.innerHTML = '<i class="fas fa-pause"></i><span>Music On</span>';
+  }
+}
+
+// TYPING TEST ANIMATION
+const birthdayMessage = `Happy Birthday Farida! 🎂
+
+You are 10 years old today! 🎉
+
+You are smart, beautiful, and kind!
+Keep smiling every single day! 😊
+
+May all your dreams come true! ✨
+May Allah bless you always! 🤲
+
+Happy 10th Birthday Princess! 🎀
+We love you so much! ❤️`;
+
+function startTyping(){
+  typingStarted = true;
+  const textBox = document.getElementById("typingText");
+  textBox.innerHTML = "";
+  let index = 0;
+
+  function typeChar(){
+    if(index < birthdayMessage.length){
+      textBox.innerHTML += birthdayMessage.charAt(index);
+      index++;
+      setTimeout(typeChar, 50); // Typing speed
+    }
+  }
+  typeChar();
+}
+
+// LIGHTBOX FOR GALLERY
+function openLightbox(src){
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+// CONFETTI EFFECT
+function createConfetti(){
+  const colors = ['#ffd700','#ff69b4','#a855f7','#ffffff','#ff8fd4'];
+  for(let i=0; i<80; i++){
+    setTimeout(() => {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + '%';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.width = (Math.random() * 8 + 6) + 'px';
+      confetti.style.height = confetti.style.width;
+      confetti.style.animationDelay = Math.random() * 0.5 + 's';
+      confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 6000);
+    }, i * 30);
+  }
+}
+
+// Prevent iOS zoom
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function(event) {
+  const now = Date.now();
+  if (now - lastTouchEnd <= 300) event.preventDefault();
+  lastTouchEnd = now;
+}, false);
+</script>
+</body>
+</html>
